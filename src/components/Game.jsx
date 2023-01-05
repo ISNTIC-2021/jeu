@@ -15,22 +15,35 @@ class Game extends Component {
     }
     Jouer = () =>{
         const facevalue= Math.floor(Math.random()*6+1)
-        this.setState({face:facevalue,computer:this.state.computer+1,end:false })
+        this.setState({face:facevalue,computer:this.state.computer+1})
+        if (facevalue===2){
+            this.setState({end:true})
+        }
+    }
+
+    initial=()=>{
+        this.setState({face:null,computer:0,end:false})
     }
 
   render() {
     return (
       <>
-      <img src={this.state.face==null
-        ?`assets/de.jpg`
-        :`assets/face${this.state.face}.png`
-        
-        
-        } alt="" />
+      <img src={this.state.face==null?`assets/de.jpg`:`assets/face${this.state.face}.png`} alt="" />
       <h1>Jeu Dé</h1>
       <p>Face : {this.state.face}</p>
       <p>Nombre d'essais : {this.state.computer}</p>
-      <button onClick={this.Jouer}>Jouer</button>
+      {/* <p><input type="number" id='input' /></p> */}
+      {/* <button onClick={this.Jouer}>Jouer</button> */}
+      {
+        this.state.end
+        ? 
+        <>
+        <p>Bravo vous avez trouvez la face cache</p>
+        <button onClick={this.initial}>Initialiser</button>
+        </>
+        
+         :<button onClick={this.Jouer}>Jouer</button>
+      }
       </>
     )
   }
