@@ -32,8 +32,6 @@ class Game extends Component {
       <h1>Jeu Dé</h1>
       <p>Face : {this.state.face}</p>
       <p>Nombre d'essais : {this.state.computer}</p>
-      {/* <p><input type="number" id='input' /></p> */}
-      {/* <button onClick={this.Jouer}>Jouer</button> */}
       {
         this.state.end
         ? 
