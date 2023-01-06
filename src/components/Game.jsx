@@ -1,4 +1,4 @@
-import React, { Component, useState } from 'react'
+import React, { Component } from 'react'
 import '../components/Game.css';
 // import De from '../assets/de.jpg' 
 // import face1 from '../assets/face1.png' 
@@ -17,7 +17,7 @@ class Game extends Component {
         
         const facevalue= Math.floor(Math.random()*6+1)
         this.setState({face:facevalue,computer:this.state.computer+1})
-        if (facevalue===6){
+        if (facevalue===3){
             this.setState({end:true})
         }
     }
@@ -42,7 +42,7 @@ class Game extends Component {
         <button onClick={this.initial}>Initialiser</button>
         </>
         :<>
-          <p><input type="nombre" name="Nom" placeholder='Une nombre entre 1 et 6' id='nombre'   /></p>
+          <p><input type="text"  placeholder='Une nombre entre 1 et 6' /></p>
           <button onClick={this.Jouer}>Jouer</button>
         </>
       }
