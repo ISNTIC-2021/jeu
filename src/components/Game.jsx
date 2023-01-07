@@ -11,7 +11,7 @@ class Game extends Component {
         
         const facevalue= Math.floor(Math.random()*6+1)
         this.setState({face:facevalue,computer:this.state.computer+1})
-        if (facevalue===8){
+        if (facevalue===5){
             this.setState({end:true})
         }
 
